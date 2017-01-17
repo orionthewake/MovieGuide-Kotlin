@@ -10,12 +10,5 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
         hello.text = getString(R.string.hello_world)
-
-        var a = "a"
-        var b: String? = "abc"
-
-        val l = a.length
-        val len = b?.length
-
     }
 }
