@@ -11,7 +11,7 @@ import com.esoxjem.movieguide.movies.listing.ListingModule
 class MovieGuideApp : Application() {
 
     lateinit var appComponent: AppComponent
-    var listingComponent: ListingComponent? = null
+    lateinit var listingComponent: ListingComponent
 
     override fun onCreate() {
         super.onCreate()
@@ -22,13 +22,13 @@ class MovieGuideApp : Application() {
         return DaggerAppComponent.builder().appModule(AppModule(this)).build()
     }
 
-    fun createListingComponent() : ListingComponent? {
+    fun createListingComponent(): ListingComponent {
         listingComponent = appComponent.plus(ListingModule())
         return listingComponent
     }
 
     fun releaseListingComponent() {
-        listingComponent = null
+
     }
 
 }

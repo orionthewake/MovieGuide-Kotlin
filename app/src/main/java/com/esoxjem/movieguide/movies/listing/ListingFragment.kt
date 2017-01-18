@@ -29,4 +29,9 @@ object ListingFragment : Fragment(), ListingView {
     override fun onViewCreated(view: View?, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
     }
+
+    override fun onDestroyView() {
+        super.onDestroyView()
+        (context.applicationContext as MovieGuideApp).releaseListingComponent()
+    }
 }
