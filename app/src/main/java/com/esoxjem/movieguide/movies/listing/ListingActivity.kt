@@ -13,7 +13,7 @@ class ListingActivity : AppCompatActivity() {
     }
 
     private fun loadListingFragment(savedInstanceState: Bundle?) {
-        if (savedInstanceState != null) {
+        if (savedInstanceState == null) {
             supportFragmentManager
                     .beginTransaction()
                     .add(R.id.listingContainer, ListingFragment.getInstance(), ListingFragment.javaClass.simpleName)

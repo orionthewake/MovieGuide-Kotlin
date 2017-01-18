@@ -5,6 +5,7 @@ import android.support.v4.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import com.esoxjem.movieguide.MovieGuideApp
 import com.esoxjem.movieguide.R
 
 /**
@@ -18,6 +19,7 @@ object ListingFragment : Fragment(), ListingView {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
+        (context.applicationContext as MovieGuideApp).createListingComponent()?.inject(this)
     }
 
     override fun onCreateView(inflater: LayoutInflater?, container: ViewGroup?, savedInstanceState: Bundle?): View? {
