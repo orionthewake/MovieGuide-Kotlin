@@ -19,7 +19,7 @@ object ListingFragment : Fragment(), ListingView {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        (context.applicationContext as MovieGuideApp).createListingComponent()?.inject(this)
+        (context.applicationContext as MovieGuideApp).createListingComponent().inject(this)
     }
 
     override fun onCreateView(inflater: LayoutInflater?, container: ViewGroup?, savedInstanceState: Bundle?): View? {
