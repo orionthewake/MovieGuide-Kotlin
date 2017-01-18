@@ -1,4 +1,4 @@
-package com.esoxjem.movieguide.entity
+package com.esoxjem.movieguide.movies.models
 
 import android.os.Parcel
 import android.os.Parcelable

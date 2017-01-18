@@ -1,4 +1,4 @@
-package com.esoxjem.movieguide.entity
+package com.esoxjem.movieguide.movies.models
 
 /**
  * @author arunsasidharan
