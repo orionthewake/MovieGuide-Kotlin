@@ -7,16 +7,14 @@ import android.view.ViewGroup
 import com.esoxjem.movieguide.R
 import com.esoxjem.movieguide.movies.models.Movie
 import kotlinx.android.synthetic.main.movie_grid_item.view.*
+import java.util.*
 
 /**
  * @author arunsasidharan
  */
-class ListingAdapter(val movies: List<Movie>) : RecyclerView.Adapter<ListingAdapter.ViewHolder>() {
-    inner class ViewHolder(root: View) : RecyclerView.ViewHolder(root) {
-        fun bind(movie: Movie) = with(itemView) {
-            title.text = movie.title
-        }
-    }
+class ListingAdapter : RecyclerView.Adapter<ListingAdapter.ViewHolder>() {
+
+    private var movies: List<Movie> = ArrayList()
 
     override fun onBindViewHolder(holder: ViewHolder, position: Int) {
         holder.bind(movies[position])
@@ -31,4 +29,14 @@ class ListingAdapter(val movies: List<Movie>) : RecyclerView.Adapter<ListingAdap
         return ViewHolder(root)
     }
 
+    fun addMovies(movies: List<Movie>) {
+        this.movies = movies
+        notifyDataSetChanged()
+    }
+
+    inner class ViewHolder(root: View) : RecyclerView.ViewHolder(root) {
+        fun bind(movie: Movie) = with(itemView) {
+            title.text = movie.title
+        }
+    }
 }

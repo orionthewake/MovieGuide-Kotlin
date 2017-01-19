@@ -8,9 +8,7 @@ import android.view.View
 import android.view.ViewGroup
 import com.esoxjem.movieguide.MovieGuideApp
 import com.esoxjem.movieguide.R
-import com.esoxjem.movieguide.movies.models.Movie
 import kotlinx.android.synthetic.main.fragment_listing.*
-import java.util.*
 import javax.inject.Inject
 
 /**
@@ -19,7 +17,6 @@ import javax.inject.Inject
 class ListingFragment : Fragment(), ListingView {
 
     @Inject lateinit var presenter: ListingPresenter
-    private var movies: List<Movie> = ArrayList(16)
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -46,6 +43,6 @@ class ListingFragment : Fragment(), ListingView {
         val layoutManager = GridLayoutManager(context, 2)
         movies_listing.layoutManager = layoutManager
         movies_listing.setHasFixedSize(true)
-        movies_listing.adapter = ListingAdapter(movies)
+        movies_listing.adapter = ListingAdapter()
     }
 }
