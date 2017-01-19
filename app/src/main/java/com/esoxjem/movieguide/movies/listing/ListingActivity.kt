@@ -16,7 +16,7 @@ class ListingActivity : AppCompatActivity() {
         if (savedInstanceState == null) {
             supportFragmentManager
                     .beginTransaction()
-                    .add(R.id.listingContainer, ListingFragment.getInstance(), ListingFragment.javaClass.simpleName)
+                    .add(R.id.listingContainer, ListingFragment(), ListingFragment::class.simpleName)
                     .commit()
         }
     }

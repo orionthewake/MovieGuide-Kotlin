@@ -7,15 +7,15 @@ import android.view.View
 import android.view.ViewGroup
 import com.esoxjem.movieguide.MovieGuideApp
 import com.esoxjem.movieguide.R
+import javax.inject.Inject
 
 /**
  * @author arunsasidharan
  */
-object ListingFragment : Fragment(), ListingView {
+class ListingFragment : Fragment(), ListingView {
 
-    fun getInstance(): ListingFragment {
-        return ListingFragment
-    }
+    @Inject
+    lateinit var presenter : ListingPresenter
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -28,6 +28,7 @@ object ListingFragment : Fragment(), ListingView {
 
     override fun onViewCreated(view: View?, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
+        presenter.setView(this)
     }
 
     override fun onDestroyView() {
