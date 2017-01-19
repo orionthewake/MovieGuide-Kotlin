@@ -29,9 +29,11 @@ class ListingAdapter : RecyclerView.Adapter<ListingAdapter.ViewHolder>() {
         return ViewHolder(root)
     }
 
-    fun addMovies(movies: List<Movie>) {
-        this.movies = movies
-        notifyDataSetChanged()
+    fun addMovies(movies: List<Movie>?) {
+        if (movies != null) {
+            this.movies = movies
+            notifyDataSetChanged()
+        }
     }
 
     inner class ViewHolder(root: View) : RecyclerView.ViewHolder(root) {
