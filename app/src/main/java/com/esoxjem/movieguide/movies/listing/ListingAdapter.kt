@@ -6,19 +6,24 @@ import android.view.View
 import android.view.ViewGroup
 import com.esoxjem.movieguide.R
 import com.esoxjem.movieguide.movies.models.Movie
+import kotlinx.android.synthetic.main.movie_grid_item.view.*
 
 /**
  * @author arunsasidharan
  */
 class ListingAdapter(val movies: List<Movie>) : RecyclerView.Adapter<ListingAdapter.ViewHolder>() {
-    class ViewHolder(root: View?) : RecyclerView.ViewHolder(root) {
+    inner class ViewHolder(root: View) : RecyclerView.ViewHolder(root) {
+        fun bind(movie: Movie) = with(itemView) {
+            title.text = movie.title
+        }
     }
 
-    override fun onBindViewHolder(holder: ViewHolder?, position: Int) {
+    override fun onBindViewHolder(holder: ViewHolder, position: Int) {
+        holder.bind(movies[position])
     }
 
     override fun getItemCount(): Int {
-        return 10
+        return movies.size
     }
 
     override fun onCreateViewHolder(parent: ViewGroup?, viewType: Int): ViewHolder {

@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <FrameLayout
-    android:id="@+id/movie_container"
+    android:id="@+id/container"
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
@@ -11,7 +11,7 @@
     android:foreground="?attr/selectableItemBackground">
 
     <ImageView
-        android:id="@+id/movie_poster"
+        android:id="@+id/poster"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:scaleType="centerCrop"/>
@@ -26,7 +26,7 @@
         android:gravity="center"/>
 
     <TextView
-        android:id="@+id/movie_name"
+        android:id="@+id/title"
         android:layout_width="match_parent"
         android:layout_height="48dp"
         android:layout_gravity="bottom"
