@@ -1,8 +1,8 @@
-package com.esoxjem.movieguide.network
+package com.esoxjem.movieguide.movies.network
 
 import android.content.Context
 import com.esoxjem.movieguide.BuildConfig
-import com.esoxjem.movieguide.movies.api.ApiKeyInterceptor
+import com.esoxjem.movieguide.movies.network.ApiKeyInterceptor
 import com.esoxjem.movieguide.movies.api.TheMovieDbApi
 import com.google.gson.Gson
 import com.google.gson.GsonBuilder
@@ -28,7 +28,7 @@ class NetworkModule {
         return Retrofit.Builder()
                 .addConverterFactory(GsonConverterFactory.create(gson))
                 .addCallAdapterFactory(RxJavaCallAdapterFactory.create())
-                .baseUrl(TheMovieDbApi.BASE_URL)
+                .baseUrl("http://api.themoviedb.org/")
                 .client(okHttpClient)
                 .build()
     }
