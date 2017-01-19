@@ -28,6 +28,7 @@ android {
 ext {
     support_lib_version = '25.1.0'
     dagger_version = '2.5'
+    retrofitVersion = '2.1.0'
 }
 
 kapt {
@@ -44,6 +45,16 @@ dependencies {
     // Support libs
     compile "com.android.support:appcompat-v7:$support_lib_version"
     compile "com.android.support:recyclerview-v7:${support_lib_version}"
+
+    // Rx
+    compile 'io.reactivex:rxandroid:1.2.1'
+    compile 'io.reactivex:rxjava:1.2.4'
+
+    // Network
+    compile "com.squareup.retrofit2:retrofit:$retrofitVersion"
+    compile "com.squareup.retrofit2:converter-gson:$retrofitVersion"
+    compile 'com.squareup.okhttp3:logging-interceptor:3.3.0'
+    compile 'com.squareup.retrofit2:adapter-rxjava:2.0.0'
 
     // DI
     kapt "com.google.dagger:dagger-compiler:$dagger_version"

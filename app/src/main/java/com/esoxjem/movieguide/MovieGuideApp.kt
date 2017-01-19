@@ -3,6 +3,7 @@ package com.esoxjem.movieguide
 import android.app.Application
 import com.esoxjem.movieguide.movies.listing.ListingComponent
 import com.esoxjem.movieguide.movies.listing.ListingModule
+import com.esoxjem.movieguide.network.NetworkModule
 
 /**
  * @author arunsasidharan
@@ -19,7 +20,9 @@ class MovieGuideApp : Application() {
     }
 
     private fun createAppComponent(): AppComponent {
-        return DaggerAppComponent.builder().appModule(AppModule(this)).build()
+        return DaggerAppComponent.builder()
+                .networkModule(NetworkModule())
+                .appModule(AppModule(this)).build()
     }
 
     fun createListingComponent(): ListingComponent {
