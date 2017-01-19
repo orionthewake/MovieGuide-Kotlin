@@ -43,6 +43,7 @@ dependencies {
 
     // Support libs
     compile "com.android.support:appcompat-v7:$support_lib_version"
+    compile "com.android.support:recyclerview-v7:${support_lib_version}"
 
     // DI
     kapt "com.google.dagger:dagger-compiler:$dagger_version"

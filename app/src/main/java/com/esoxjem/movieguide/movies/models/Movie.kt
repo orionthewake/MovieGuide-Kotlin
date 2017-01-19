@@ -7,12 +7,12 @@ import android.os.Parcelable
  * @author arunsasidharan
  */
 data class Movie(
-        private val id: String,
-        private val overview: String,
-        private val posterPath: String,
-        private val backdropPath: String,
-        private val title: String,
-        private val voteAverage: Double) : Parcelable {
+        val id: String,
+        val overview: String,
+        val posterPath: String,
+        val backdropPath: String,
+        val title: String,
+        val voteAverage: Double) : Parcelable {
 
 
     companion object {

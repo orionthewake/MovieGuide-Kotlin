@@ -10,13 +10,12 @@ import dagger.Provides
 class ListingModule {
 
     @Provides
-    fun provideListingPresenter(listingInteractor: ListingInteractor) : ListingPresenter {
+    fun provideListingPresenter(listingInteractor: ListingInteractor): ListingPresenter {
         return ListingPresenterImpl(listingInteractor)
     }
 
-    @Provides
-    @ListingScope
-    fun provideListingInteractor() : ListingInteractor {
+    @Provides @ListingScope
+    fun provideListingInteractor(): ListingInteractor {
         return ListingInteractorImpl()
     }
 }
