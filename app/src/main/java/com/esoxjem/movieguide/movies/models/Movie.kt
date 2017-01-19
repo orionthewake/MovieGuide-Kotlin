@@ -2,17 +2,18 @@ package com.esoxjem.movieguide.movies.models
 
 import android.os.Parcel
 import android.os.Parcelable
+import com.google.gson.annotations.SerializedName
 
 /**
  * @author arunsasidharan
  */
 data class Movie(
-        private val id: String,
-        private val overview: String,
-        private val posterPath: String,
-        private val backdropPath: String,
-        private val title: String,
-        private val voteAverage: Double) : Parcelable {
+        @SerializedName("poster_path") val posterPath: String,
+        val id: String,
+        val overview: String,
+        val backdropPath: String,
+        val title: String,
+        val voteAverage: Double) : Parcelable {
 
 
     companion object {
@@ -41,5 +42,10 @@ data class Movie(
         dest?.writeString(backdropPath)
         dest?.writeString(title)
         dest?.writeDouble(voteAverage)
+    }
+
+    fun getPosterUrl(): String
+    {
+        return "http://image.tmdb.org/t/p/w342$posterPath"
     }
 }

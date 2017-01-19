@@ -2,6 +2,7 @@ package com.esoxjem.movieguide.movies.listing
 
 import dagger.Module
 import dagger.Provides
+import retrofit2.Retrofit
 
 /**
  * @author arunsasidharan
@@ -10,13 +11,12 @@ import dagger.Provides
 class ListingModule {
 
     @Provides
-    fun provideListingPresenter(listingInteractor: ListingInteractor) : ListingPresenter {
-        return ListingPresenterImpl(listingInteractor)
+    fun provideListingPresenter(listingInteractor: ListingInteractor): ListingPresenter {
+        return ListingPresenterImpl(listingInteractor, null)
     }
 
-    @Provides
-    @ListingScope
-    fun provideListingInteractor() : ListingInteractor {
-        return ListingInteractorImpl()
+    @Provides @ListingScope
+    fun provideListingInteractor(retrofit: Retrofit): ListingInteractor {
+        return ListingInteractorImpl(retrofit)
     }
 }
