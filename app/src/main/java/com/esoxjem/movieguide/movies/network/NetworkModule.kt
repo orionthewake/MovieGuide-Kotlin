@@ -61,8 +61,7 @@ class NetworkModule {
 
     @Provides @Singleton
     fun provideGson(): Gson {
-        val gsonBuilder = GsonBuilder()
-        return gsonBuilder.create()
+        return GsonBuilder().create()
     }
 
 

@@ -4,6 +4,7 @@ import android.support.v7.widget.RecyclerView
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import com.bumptech.glide.Glide
 import com.esoxjem.movieguide.R
 import com.esoxjem.movieguide.movies.models.Movie
 import kotlinx.android.synthetic.main.movie_grid_item.view.*
@@ -39,6 +40,7 @@ class ListingAdapter : RecyclerView.Adapter<ListingAdapter.ViewHolder>() {
     inner class ViewHolder(root: View) : RecyclerView.ViewHolder(root) {
         fun bind(movie: Movie) = with(itemView) {
             title.text = movie.title
+            Glide.with(context).load(movie.getPosterUrl()).into(poster)
         }
     }
 }
