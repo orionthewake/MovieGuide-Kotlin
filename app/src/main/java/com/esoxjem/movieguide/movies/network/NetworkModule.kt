@@ -2,8 +2,6 @@ package com.esoxjem.movieguide.movies.network
 
 import android.content.Context
 import com.esoxjem.movieguide.BuildConfig
-import com.esoxjem.movieguide.movies.network.ApiKeyInterceptor
-import com.esoxjem.movieguide.movies.api.TheMovieDbApi
 import com.google.gson.Gson
 import com.google.gson.GsonBuilder
 import dagger.Module
