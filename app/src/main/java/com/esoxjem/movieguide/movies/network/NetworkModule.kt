@@ -14,6 +14,7 @@ import okhttp3.logging.HttpLoggingInterceptor
 import retrofit2.Retrofit
 import retrofit2.adapter.rxjava.RxJavaCallAdapterFactory
 import retrofit2.converter.gson.GsonConverterFactory
+import javax.inject.Named
 import javax.inject.Singleton
 
 
@@ -24,11 +25,11 @@ import javax.inject.Singleton
 class NetworkModule {
 
     @Provides @Singleton
-    fun provideRetrofit(gson: Gson, okHttpClient: OkHttpClient): Retrofit {
+    fun provideRetrofit(@Named("baseUrl") baseUrl: String, gson: Gson, okHttpClient: OkHttpClient): Retrofit {
         return Retrofit.Builder()
                 .addConverterFactory(GsonConverterFactory.create(gson))
                 .addCallAdapterFactory(RxJavaCallAdapterFactory.create())
-                .baseUrl("http://api.themoviedb.org/")
+                .baseUrl(baseUrl)
                 .client(okHttpClient)
                 .build()
     }
@@ -63,6 +64,4 @@ class NetworkModule {
     fun provideGson(): Gson {
         return GsonBuilder().create()
     }
-
-
 }
