@@ -1,5 +1,6 @@
 package com.esoxjem.movieguide.movies.listing
 
+import com.esoxjem.movieguide.movies.api.TheMovieDbApi
 import dagger.Module
 import dagger.Provides
 import retrofit2.Retrofit
@@ -16,7 +17,7 @@ class ListingModule {
     }
 
     @Provides @ListingScope
-    fun provideListingInteractor(retrofit: Retrofit): ListingInteractor {
-        return ListingInteractorImpl(retrofit)
+    fun provideListingInteractor(api: TheMovieDbApi): ListingInteractor {
+        return ListingInteractorImpl(api)
     }
 }
