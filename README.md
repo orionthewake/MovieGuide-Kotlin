@@ -3,7 +3,10 @@
 
 This app showcases the use of Kotlin with RxJava, Dagger 2, Retrofit and the MVP pattern using Uncle Bob's Clean Architecture approach.
 
-Add your themoviedb.org API key in `ApiKeyInterceptor.kt`
+Add your themoviedb.org API key in `root/local.properties`
+```
+tmdb_api_key=YOUR_API_KEY
+```
 
 ![Screenshot](http://i.imgur.com/72PypXCm.png) 
 ![screenshot2](http://imgur.com/I96Eka6m.png)

@@ -1,5 +1,6 @@
 package com.esoxjem.movieguide.movies.network
 
+import com.esoxjem.movieguide.BuildConfig
 import okhttp3.Interceptor
 import okhttp3.Response
 
@@ -8,7 +9,7 @@ internal class ApiKeyInterceptor : Interceptor {
         val originalRequest = chain.request()
         val originalUrl = originalRequest.url()
         val url = originalUrl.newBuilder()
-                .addQueryParameter("api_key", "<API KEY>")
+                .addQueryParameter("api_key", BuildConfig.TMDB_API_KEY)
                 .build()
 
         val requestBuilder = originalRequest.newBuilder().url(url)
