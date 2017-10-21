@@ -19,12 +19,12 @@ def getProperty(String filename, String propName) {
 }
 
 android {
-    compileSdkVersion 25
-    buildToolsVersion "25.0.2"
+    compileSdkVersion 26
+    buildToolsVersion "26.0.2"
     defaultConfig {
         applicationId "com.esoxjem.movieguide"
         minSdkVersion 16
-        targetSdkVersion 25
+        targetSdkVersion 26
         versionCode 1
         versionName "1.0"
         testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
@@ -42,7 +42,7 @@ android {
 }
 
 ext {
-    support_lib_version = '25.1.0'
+    support_lib_version = '26.1.0'
     dagger_version = '2.5'
     retrofitVersion = '2.1.0'
 }
